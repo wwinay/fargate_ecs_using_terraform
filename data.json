@@ -1,0 +1,25 @@
+{
+      "family": "ecs-vinay-app-task",
+      "containerDefinitions": [
+      {
+              "name": "ecs-vinay-app",
+              "image": "wwinay/httpd_centos:latest",
+              "cpu": 1024,
+              "memory": 1024,
+              "portMappings": [{
+                      "containerPort": 80,
+                      "hostPort": 80
+              }],
+              "essential": true,
+              "mountPoints": [],
+              "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/ecs-vinay-app-task",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            }
+      }
+    ]
+}

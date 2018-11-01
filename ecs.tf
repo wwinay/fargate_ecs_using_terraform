@@ -1,5 +1,5 @@
 resource "aws_ecs_cluster" "main" {
-  name = "cb-cluster"
+  name = "vinay-cluster"
 }
 
 data "template_file" "cb_app" {
